@@ -1,0 +1,45 @@
+@import 'Colors';
+
+.App{
+    background: $GreyLight;
+    h1{
+        background: $DarkBlue;
+        color: $GreyLight;
+        padding: 20px 0;
+    }
+    form{
+        div{
+        width:500px;
+        }
+    }
+    .Food{
+        background: #fff;
+        border:1px solid $GreyLight;
+        margin: 20px 0;
+        font-family: sans-serif;
+        box-shadow: 0 0 5px 0 #999;
+        height: 93%;
+        img{
+            width: 100%;
+        }
+        .info{
+            padding:20px 15px;
+            span{
+                font-weight: bold;
+            }
+            button{
+                padding: 7px 15px ;
+                background: $RedLight;
+                border:none;
+                border-radius: 36px;
+                color:#fff;
+                transition: all .4s ease-in-out;
+                margin-top:10px;
+                &:hover{
+                    background: $DarkBlue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

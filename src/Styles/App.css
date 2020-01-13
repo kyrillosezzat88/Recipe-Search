@@ -1,0 +1,52 @@
+.App {
+  background: #eaeaea;
+}
+
+.App h1 {
+  background: #252a34;
+  color: #eaeaea;
+  padding: 20px 0;
+}
+
+.App form div {
+  width: 500px;
+}
+
+.App .Food {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  margin: 20px 0;
+  font-family: sans-serif;
+  -webkit-box-shadow: 0 0 5px 0 #999;
+          box-shadow: 0 0 5px 0 #999;
+  height: 93%;
+}
+
+.App .Food img {
+  width: 100%;
+}
+
+.App .Food .info {
+  padding: 20px 15px;
+}
+
+.App .Food .info span {
+  font-weight: bold;
+}
+
+.App .Food .info button {
+  padding: 7px 15px;
+  background: #ff2e63;
+  border: none;
+  border-radius: 36px;
+  color: #fff;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  margin-top: 10px;
+}
+
+.App .Food .info button:hover {
+  background: #252a34;
+  cursor: pointer;
+}
+/*# sourceMappingURL=App.css.map */
