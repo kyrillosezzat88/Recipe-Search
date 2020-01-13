@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 const Home = ({Recipes}) => {
-        console.log( 'this is Home' + Recipes);
         const item = Recipes.map(food=>{
             return(
                 <div className='col-12 col-md-4' key={food.recipe.label}>
@@ -20,7 +19,6 @@ const Home = ({Recipes}) => {
             <div className='Recipes'>
                 <div className='container'>
                     <div className='row'>
-                      
                         {item}
                     </div>
                 </div>

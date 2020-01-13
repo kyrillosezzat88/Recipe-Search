@@ -7,7 +7,7 @@ class Recipe extends Component{
         return(
             <div className='Recipe'>
                 <div className='container'>
-                  <h1>Recipe Component</h1>
+                 
                 </div>
             </div>
         )
