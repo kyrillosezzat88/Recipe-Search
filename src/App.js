@@ -1,36 +1,23 @@
 import React , {Component} from 'react';
 import './Styles/App.css'
-import axios from 'axios'
-import {BrowserRouter , Route , Switch} from 'react-router-dom'
+import {BrowserRouter , Route , Switch , Link} from 'react-router-dom'
 import Home from './Components/Home'
 import Search from './Components/Search'
 import Recipe from './Components/Recipe'
 class App extends Component {
-      state = {
-        Recipes:[ ]
-    }
-    GetData = (recipe)=>{
-      let newRecipes = [...recipe];
-      this.setState({
-        Recipes : newRecipes
-      });
-      console.log(this.state)
-    }
   render(){
     return (
       <BrowserRouter>
          <div className="App">
-          <h1 className='text-center text-uppercase'>Recipe Search</h1>
-          <Search  GetData={this.GetData}  />
-          <Home Recipes = {this.state.Recipes}  />
+          <h1 className='text-center text-uppercase'><Link to='/'>Recipe Search</Link></h1>
           <Switch>
-            <Route path='/:yield' render={(props) => <Recipe {...props} Recipe={this.state.Recipes} />} />
+            <Route exact path = '/' component={Search} />
+            <Route  path='/Search' component={Home} />
+            <Route path='/:label' component={Recipe} />
           </Switch>
         </div>
       </BrowserRouter>
     );
   }
-
 }
-
 export default App;

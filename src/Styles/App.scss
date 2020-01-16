@@ -1,5 +1,33 @@
 @import 'Colors';
-
+//button function
+@mixin button {
+    padding: 7px 15px ;
+    background: $RedLight;
+    border:none;
+    border-radius: 36px;
+    color:#fff;
+    transition: all .4s ease-in-out;
+    margin-top:10px;
+    &:hover{
+        background: $DarkBlue;
+        cursor: pointer;
+    }
+}
+//animation loading div
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform:translateY(5px)
+    }
+    50%{
+        opacity: 1;
+        transform:translateY(0px)
+    }
+    100%{
+        opacity: 0;
+        transform:translateY(5px)
+    }
+}
 .App{
     background: $GreyLight;
     height: 100vh;
@@ -8,12 +36,88 @@
         background: $DarkBlue;
         color: $GreyLight;
         padding: 20px 0;
-    }
-    form{
-        div{
-        width:500px;
+        a{
+            color: $GreyLight;
+            &:hover{
+                text-decoration: none;
+            }
         }
     }
+    .search{
+        form{
+            height:calc(100vh - 100px);
+            margin:0;
+            div{
+                width:500px;
+                input{
+                    background:none;
+                    border:none;
+                    border-bottom: 1px solid $DarkBlue;
+                    margin: 0 10px;
+                    width:60%;
+                    outline: none;
+                    transition: all .4s ease-in-out;
+                    &:focus{
+                        border-bottom: 1px solid $RedLight;
+                        transition: all .4s ease-in-out;
+                    }
+                }
+                button{
+                    background: $RedLight;
+                    border: none;
+                    border-radius: 18px;
+                    padding: 5px 25px;
+                    color:#fff;
+                    transition: all .4s ease-in-out;
+                    border:1px solid $RedLight;
+                    &:hover{
+                        background: #fff;
+                        color:#000;
+                        transition: all .4s ease-in-out;
+                        border:1px solid $DarkBlue;
+                    }
+                }
+            }
+        }
+        .dot-falling{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            width:100%;
+            height:100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            &::before{
+                content: '';
+                position: absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                background-color:rgba($color: #000000, $alpha: .8)
+            }
+            span{
+                display: inline-block;
+                width:10px;
+                height:10px;
+                border-radius: 50%;
+                margin: 0 5px;
+                background:$RedLight;
+                animation: animate 1s linear infinite;
+                &:nth-of-type(2){
+                    animation-delay: .2s;
+                }
+                &:nth-of-type(3){
+                    animation-delay: .4s;
+                }
+            }
+            
+        }
+    }
+   
     .Food{
         background: #fff;
         border:1px solid $GreyLight;
@@ -30,17 +134,34 @@
                 font-weight: bold;
             }
             button{
-                padding: 7px 15px ;
-                background: $RedLight;
-                border:none;
-                border-radius: 36px;
-                color:#fff;
-                transition: all .4s ease-in-out;
-                margin-top:10px;
-                &:hover{
-                    background: $DarkBlue;
-                    cursor: pointer;
-                }
+                @include button();
+            }
+        }
+    }
+
+    //Style Recipe Page
+    .Recipe{
+        margin: 50px 0;
+        height: 100%;
+        background: $GreyLight;
+        .Details{
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 0 5px 0 #999;
+            h3{
+                color:$DarkBlue;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+            h5{
+                color:$RedLight;
+            }
+            h6{
+                font-size: 22px;
+                margin:10px 0;
+            }
+            button{
+                @include button();
             }
         }
     }
