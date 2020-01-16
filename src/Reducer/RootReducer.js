@@ -14,7 +14,7 @@ let inintState = {
         e.preventDefault();
         const ID = '1bb39c8f';
         const key = '7d5c848f0c64b5f87a17116d1cecadd0';
-        axios.get(`https://api.edamam.com/search?q=${inintState.Food}&app_id=${ID}&app_key=${key}&from=0&to=6&calories=591-722&health=alcohol-free`)
+        axios.get(`https://api.edamam.com/search?q=${inintState.Food}&app_id=${ID}&app_key=${key}&from=0&to=12&calories=591-722&health=alcohol-free`)
                 .then(res=>{
                     inintState.Recipes = res.data.hits;
                     inintState.Food = ' ';
