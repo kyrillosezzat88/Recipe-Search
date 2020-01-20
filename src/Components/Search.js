@@ -21,7 +21,7 @@ class Search extends Component{
                 <div className='search'>
                     <form className='form-group d-flex justify-content-center align-items-center' onSubmit={this.props.Recipe} >
                         <div className='form-group d-flex justify-content-center align-items-center'>
-                            <input type='text' placeholder='Please Enter Food Name' onChange={this.props.getRecipe}  />
+                            <input type='text' required placeholder='Please Enter Food Name' onChange={this.props.getRecipe}  />
                             <button onClick={this.Redirect} >Search</button>
                         </div>
                     </form>
